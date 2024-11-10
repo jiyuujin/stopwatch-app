@@ -1,0 +1,32 @@
+name: stopwatch_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.6.0-216.1.beta <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.20.5
+  flutter_riverpod: ^3.0.0-dev.3
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  hooks_riverpod: ^3.0.0-dev.3
+  riverpod: ^3.0.0-dev.3
+  riverpod_annotation: ^3.0.0-dev.3
+
+dev_dependencies:
+  analyzer: ^6.11.0
+  build_runner:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+  riverpod_generator:
+
+flutter:
+  uses-material-design: true
