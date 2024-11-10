@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:stopwatch_app/constants.dart';
 import 'package:stopwatch_app/features/session/session_time_page.dart';
 import 'package:stopwatch_app/features/timer/countdown_timer_page.dart';
+import 'package:stopwatch_app/repositories/countdown_timer_repository.dart';
 import 'package:stopwatch_app/repositories/session_time_repository.dart';
 
 void main() {
@@ -35,6 +36,12 @@ class CountdownApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final myTime = ref.watch(sessionTimeRepositoryProvider);
+    final startTime = myTime == 0 ? sessionTime : ltTime;
+
+    final timer = countdownTimerRepositoryProvider(
+      initial: Duration(seconds: startTime * 60),
+      interval: const Duration(milliseconds: milliSec),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -45,8 +52,12 @@ class CountdownApp extends HookConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SessionTimePage(),
-            CountdownTimerPage(startTime: myTime == 0 ? sessionTime : ltTime),
+            SessionTimePage(
+                disabled: ref.watch(timer.select((value) => value.isRunning))),
+            CountdownTimerPage(
+              startTime: startTime,
+              timer: timer,
+            ),
           ],
         ),
       ),

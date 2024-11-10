@@ -4,7 +4,9 @@ import 'package:stopwatch_app/constants.dart';
 import 'package:stopwatch_app/repositories/session_time_repository.dart';
 
 class SessionTimePage extends HookConsumerWidget {
-  const SessionTimePage({super.key});
+  const SessionTimePage({super.key, required this.disabled});
+
+  final bool disabled;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -16,6 +18,7 @@ class SessionTimePage extends HookConsumerWidget {
         ToggleButtons(
           isSelected: items.map((i) => i == items.elementAt(myTime)).toList(),
           selectedColor: Colors.blue[300],
+          splashColor: Colors.transparent,
           constraints: BoxConstraints(
               minHeight: 40,
               minWidth: (MediaQuery.of(context).size.width - 36) / 4),
@@ -27,6 +30,7 @@ class SessionTimePage extends HookConsumerWidget {
                   ))
               .toList(),
           onPressed: (int index) {
+            if (disabled) return;
             ref.watch(sessionTimeRepositoryProvider.notifier).setValue(index);
           },
         ),
