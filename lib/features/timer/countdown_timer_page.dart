@@ -28,7 +28,7 @@ class CountdownTimerPage extends HookConsumerWidget {
             style: const TextStyle(fontSize: 30),
           ),
           onPressed: () {
-            if (ref.watch(timer.select((value) => value.isRunning))) {
+            if (isRunning) {
               ref.read(timer.notifier).stop();
             } else {
               ref.read(timer.notifier).start();
