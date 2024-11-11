@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'session_time_repository.dart';
+part of 'session_type_repository.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,36 +15,36 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SessionTimeState {
+mixin _$SessionTypeState {
   int get value => throw _privateConstructorUsedError;
 
-  /// Create a copy of SessionTimeState
+  /// Create a copy of SessionTypeState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SessionTimeStateCopyWith<SessionTimeState> get copyWith =>
+  $SessionTypeStateCopyWith<SessionTypeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SessionTimeStateCopyWith<$Res> {
-  factory $SessionTimeStateCopyWith(
-          SessionTimeState value, $Res Function(SessionTimeState) then) =
-      _$SessionTimeStateCopyWithImpl<$Res, SessionTimeState>;
+abstract class $SessionTypeStateCopyWith<$Res> {
+  factory $SessionTypeStateCopyWith(
+          SessionTypeState value, $Res Function(SessionTypeState) then) =
+      _$SessionTypeStateCopyWithImpl<$Res, SessionTypeState>;
   @useResult
   $Res call({int value});
 }
 
 /// @nodoc
-class _$SessionTimeStateCopyWithImpl<$Res, $Val extends SessionTimeState>
-    implements $SessionTimeStateCopyWith<$Res> {
-  _$SessionTimeStateCopyWithImpl(this._value, this._then);
+class _$SessionTypeStateCopyWithImpl<$Res, $Val extends SessionTypeState>
+    implements $SessionTypeStateCopyWith<$Res> {
+  _$SessionTypeStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SessionTimeState
+  /// Create a copy of SessionTypeState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -61,32 +61,32 @@ class _$SessionTimeStateCopyWithImpl<$Res, $Val extends SessionTimeState>
 }
 
 /// @nodoc
-abstract class _$$SessionTimeStateImplCopyWith<$Res>
-    implements $SessionTimeStateCopyWith<$Res> {
-  factory _$$SessionTimeStateImplCopyWith(_$SessionTimeStateImpl value,
-          $Res Function(_$SessionTimeStateImpl) then) =
-      __$$SessionTimeStateImplCopyWithImpl<$Res>;
+abstract class _$$SessionTypeStateImplCopyWith<$Res>
+    implements $SessionTypeStateCopyWith<$Res> {
+  factory _$$SessionTypeStateImplCopyWith(_$SessionTypeStateImpl value,
+          $Res Function(_$SessionTypeStateImpl) then) =
+      __$$SessionTypeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int value});
 }
 
 /// @nodoc
-class __$$SessionTimeStateImplCopyWithImpl<$Res>
-    extends _$SessionTimeStateCopyWithImpl<$Res, _$SessionTimeStateImpl>
-    implements _$$SessionTimeStateImplCopyWith<$Res> {
-  __$$SessionTimeStateImplCopyWithImpl(_$SessionTimeStateImpl _value,
-      $Res Function(_$SessionTimeStateImpl) _then)
+class __$$SessionTypeStateImplCopyWithImpl<$Res>
+    extends _$SessionTypeStateCopyWithImpl<$Res, _$SessionTypeStateImpl>
+    implements _$$SessionTypeStateImplCopyWith<$Res> {
+  __$$SessionTypeStateImplCopyWithImpl(_$SessionTypeStateImpl _value,
+      $Res Function(_$SessionTypeStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SessionTimeState
+  /// Create a copy of SessionTypeState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SessionTimeStateImpl(
+    return _then(_$SessionTypeStateImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -97,50 +97,50 @@ class __$$SessionTimeStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SessionTimeStateImpl extends _SessionTimeState {
-  const _$SessionTimeStateImpl({required this.value}) : super._();
+class _$SessionTypeStateImpl extends _SessionTypeState {
+  const _$SessionTypeStateImpl({required this.value}) : super._();
 
   @override
   final int value;
 
   @override
   String toString() {
-    return 'SessionTimeState(value: $value)';
+    return 'SessionTypeState(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SessionTimeStateImpl &&
+            other is _$SessionTypeStateImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of SessionTimeState
+  /// Create a copy of SessionTypeState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SessionTimeStateImplCopyWith<_$SessionTimeStateImpl> get copyWith =>
-      __$$SessionTimeStateImplCopyWithImpl<_$SessionTimeStateImpl>(
+  _$$SessionTypeStateImplCopyWith<_$SessionTypeStateImpl> get copyWith =>
+      __$$SessionTypeStateImplCopyWithImpl<_$SessionTypeStateImpl>(
           this, _$identity);
 }
 
-abstract class _SessionTimeState extends SessionTimeState {
-  const factory _SessionTimeState({required final int value}) =
-      _$SessionTimeStateImpl;
-  const _SessionTimeState._() : super._();
+abstract class _SessionTypeState extends SessionTypeState {
+  const factory _SessionTypeState({required final int value}) =
+      _$SessionTypeStateImpl;
+  const _SessionTypeState._() : super._();
 
   @override
   int get value;
 
-  /// Create a copy of SessionTimeState
+  /// Create a copy of SessionTypeState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SessionTimeStateImplCopyWith<_$SessionTimeStateImpl> get copyWith =>
+  _$$SessionTypeStateImplCopyWith<_$SessionTypeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
