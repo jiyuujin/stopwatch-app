@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:stopwatch_app/constants.dart';
-import 'package:stopwatch_app/repositories/session_time_repository.dart';
+import 'package:stopwatch_app/repositories/custom_session_time_repository.dart';
+import 'package:stopwatch_app/repositories/session_type_repository.dart';
 
 class SessionTimePage extends HookConsumerWidget {
   const SessionTimePage({super.key, required this.disabled});
@@ -10,7 +11,7 @@ class SessionTimePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final myTime = ref.watch(sessionTimeRepositoryProvider);
+    final myTime = ref.watch(sessionTypeRepositoryProvider);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -31,9 +32,24 @@ class SessionTimePage extends HookConsumerWidget {
               .toList(),
           onPressed: (int index) {
             if (disabled) return;
-            ref.watch(sessionTimeRepositoryProvider.notifier).setValue(index);
+            ref.watch(sessionTypeRepositoryProvider.notifier).setValue(index);
           },
         ),
+        myTime == 2
+            ? TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Custom',
+                  hintText: 'Input minutes',
+                ),
+                keyboardType: TextInputType.number,
+                onChanged: (String value) {
+                  if (disabled) return;
+                  ref
+                      .watch(customSessionTimeRepositoryProvider.notifier)
+                      .setValue(int.parse(value));
+                },
+              )
+            : const SizedBox(),
       ],
     );
   }

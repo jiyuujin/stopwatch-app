@@ -4,7 +4,8 @@ import 'package:stopwatch_app/constants.dart';
 import 'package:stopwatch_app/features/session/session_time_page.dart';
 import 'package:stopwatch_app/features/timer/countdown_timer_page.dart';
 import 'package:stopwatch_app/repositories/countdown_timer_repository.dart';
-import 'package:stopwatch_app/repositories/session_time_repository.dart';
+import 'package:stopwatch_app/repositories/custom_session_time_repository.dart';
+import 'package:stopwatch_app/repositories/session_type_repository.dart';
 
 void main() {
   runApp(
@@ -35,8 +36,13 @@ class CountdownApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final myTime = ref.watch(sessionTimeRepositoryProvider);
-    final startTime = myTime == 0 ? sessionTime : ltTime;
+    final myTime = ref.watch(sessionTypeRepositoryProvider);
+    final myCustomTime = ref.watch(customSessionTimeRepositoryProvider);
+    final startTime = myTime == 0
+        ? sessionTime
+        : myTime == 1
+            ? ltTime
+            : myCustomTime;
 
     final timer = countdownTimerRepositoryProvider(
       initial: Duration(seconds: startTime * 60),
