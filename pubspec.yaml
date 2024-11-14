@@ -9,6 +9,7 @@ environment:
   sdk: '>=3.6.0-216.1.beta <4.0.0'
 
 dependencies:
+  confetti: ^0.8.0
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
