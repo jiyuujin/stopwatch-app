@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -86,6 +87,7 @@ class ParticleAnimation extends ConsumerStatefulWidget {
 class _ParticleAnimationState extends ConsumerState<ParticleAnimation> {
   final _controller =
       ConfettiController(duration: const Duration(milliseconds: 500));
+  final player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +107,10 @@ class _ParticleAnimationState extends ConsumerState<ParticleAnimation> {
     ref.listen<Duration>(timer.select((value) => value.current),
         (Duration? previous, Duration next) {
       if (next == Duration.zero) {
-        _controller.play();
+        // _controller.play();
+        player.setSource(AssetSource('bell.mp3')).then((value) {
+          player.play(AssetSource('bell.mp3'));
+        });
       }
     });
 
