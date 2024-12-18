@@ -53,12 +53,13 @@ class CountdownTimerRepository extends _$CountdownTimerRepository {
   void _onTick(Timer timer) {
     if (!state.isRunning) return;
     final current = state.current - state.interval;
-    final isOver = current.compareTo(Duration.zero) < 0;
-    if (isOver) {
-      state.timer?.cancel();
-      state = state.copyWith(current: Duration.zero, timer: null);
-    } else {
-      state = state.copyWith(current: current);
-    }
+    // final isOver = current.compareTo(Duration.zero) < 0;
+    // if (isOver) {
+    //   state.timer?.cancel();
+    //   state = state.copyWith(current: Duration.zero, timer: null);
+    // } else {
+    //   state = state.copyWith(current: current);
+    // }
+    state = state.copyWith(current: current);
   }
 }
