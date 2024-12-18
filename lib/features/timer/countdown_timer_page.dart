@@ -17,7 +17,15 @@ class CountdownTimerPage extends HookConsumerWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(currentTime.toString(), style: const TextStyle(fontSize: 48)),
+        Text(
+          currentTime.toString(),
+          style: TextStyle(
+            fontSize: 48,
+            color: isRunning && currentTime.inSeconds < 0
+                ? Colors.red
+                : Colors.black,
+          ),
+        ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
