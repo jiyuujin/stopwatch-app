@@ -36,18 +36,21 @@ class SessionTimePage extends HookConsumerWidget {
           },
         ),
         myTime == 2
-            ? TextField(
-                decoration: const InputDecoration(
-                  labelText: 'Custom',
-                  hintText: 'Input minutes',
+            ? SizedBox(
+                width: (MediaQuery.of(context).size.width - 36) * 3 / 4,
+                child: TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Custom',
+                    hintText: 'Input minutes',
+                  ),
+                  keyboardType: TextInputType.number,
+                  onChanged: (String value) {
+                    if (disabled) return;
+                    ref
+                        .watch(customSessionTimeRepositoryProvider.notifier)
+                        .setValue(int.parse(value));
+                  },
                 ),
-                keyboardType: TextInputType.number,
-                onChanged: (String value) {
-                  if (disabled) return;
-                  ref
-                      .watch(customSessionTimeRepositoryProvider.notifier)
-                      .setValue(int.parse(value));
-                },
               )
             : const SizedBox(),
       ],
